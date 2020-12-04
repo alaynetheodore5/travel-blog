@@ -1,0 +1,49 @@
+﻿@model ContactInquiry
+
+@{
+    ViewData["Title"] = "Contact";
+}
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/css/contact.css" rel="stylesheet">
+
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic">Contact</h1>
+        <h4>Interested in working together?</h4>
+    </div>
+</div>
+
+@* *************** contact form *************** *@
+<div class="container">
+    <div class="col mt-5 mb-5">
+        <form action="/contact/new" method="post">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="form-group">
+                        <label>NAME</label>
+                        <input asp-for="ContactName" class="form-control" />
+                        <span asp-validation-for="ContactName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>EMAIL</label>
+                        <input asp-for="ContactEmail" class="form-control" />
+                        <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>SUBJECT</label>
+                        <input asp-for="ContactSubject" class="form-control">
+                        <span class="text-danger" asp-validation-for="ContactSubject"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>MESSAGE</label>
+                        <textarea asp-for="ContactMessage" class="form-control" ></textarea>
+                        <span asp-validation-for="ContactMessage" class="text-danger"></span>
+                    </div>
+                    <input type="submit" value="SEND MESSAGE" class="btn btn-dark float-right">
+                </div>    
+            </div>
+        </form>
+    </div>
+</div>

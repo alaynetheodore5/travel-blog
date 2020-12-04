@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Destinations";
+}
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/css/destinations.css" rel="stylesheet">
+
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+    <h1 class="display-4 font-italic">About</h1>
+    <h4>my travel site</h4>
+    <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+    <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">START HERE</a></p>
+    </div>
+</div>
+
+@* *************** featured blog posts *************** *@
+
+<div class="aboutme-meet">
+    <h2>
+    <span>meet</span>
+    alayne
+    </h2>
+</div>
+
+<div class="aboutme-destinations">
+
+</div>
+
+@* *************** bucket list experiences (carousel) *************** *@
+
+<div class="container">
+    <h1>Use Bootstrap's carousel to show multiple items per slide.</h1>
+    <div class="row">
+        <div class="col-md-12">
+        <div class="carousel slide multi-item-carousel" id="theCarousel">
+            <div class="carousel-inner">
+            <div class="item active">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/f44336/000000" class="img-responsive"></a></div>
+            </div>
+            <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/e91e63/000000" class="img-responsive"></a></div>
+            </div>
+            <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/9c27b0/000000" class="img-responsive"></a></div>
+            </div>
+            <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/673ab7/000000" class="img-responsive"></a></div>
+            </div>
+            <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/4caf50/000000" class="img-responsive"></a></div>
+            </div>
+            <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
+            </div>
+            </div>
+            <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+        </div>
+        </div>
+    </div>
+</div>
+
+@* *************** where i've been *************** *@
+
+<script>
+
+// Instantiate the Bootstrap carousel
+$('.multi-item-carousel').carousel({
+interval: false
+});
+
+// for every slide in carousel, copy the next slide's item in the slide.
+// Do the same for the next, next item.
+$('.multi-item-carousel .item').each(function(){
+var next = $(this).next();
+if (!next.length) {
+    next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+
+if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+} else {
+    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+}
+});
+</script>
+

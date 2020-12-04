@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Travel</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+            crossorigin="anonymous"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    @* <script src="~/js/site.js" type="text/javascript"></script> *@
+        <script src="/Scripts/jquery-3.1.1.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg border-bottom box-shadow" style="background-color: #EED6D3; height: 2rem;">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about-me">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/travel-blog">BLOG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/loginindex">Login</a>
+                        </li>
+                    </ul>
+                    <form action="/search" method="post" class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" style="height: 2rem;" type="search" name="q" placeholder="SEARCH THE SITE ... " aria-label="Search for a Book">
+                        <button class="btn" type="submit">&#xf002;</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="jumbotron bg-white text-center">
+        <h1>Travel Blog img placeholder</h1>
+    </div>
+
+    <div class="nav-scroller py-1 mb-2" id="navbar">
+        <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="/">HOME</a>
+        <a class="p-2 text-muted" href="/start-here">START HERE</a>
+        <a class="p-2 text-muted" href="/destinations">DESTINATIONS</a>
+        @* <a class="p-2 text-muted" href="#">Design</a>
+        <a class="p-2 text-muted" href="#">Culture</a> *@
+        <a class="p-2 text-muted" href="/travel-shop">TRAVEL SHOP</a>
+        <a class="p-2 text-muted nav-item dropdown dropdown-toggle" href="/resources" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        RESOURCES
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/resources/travel-resources">TRAVEL RESOURCES</a>
+        <a class="dropdown-item" href="/resources/packing-guide">PACKING GUIDE</a>
+        </nav>
+    </div>
+    @* <div class="container"> *@
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    @* </div> *@
+
+    @* <div style="background-color: #EED6D3; padding-top: 20px; padding-bottom: 20px;">
+        <div class="row mx-auto">
+                <div class="site-img">
+                    <img src="~/Images/siteimg1.jpeg" alt="pic 1" width="280" height="260" style="display: inline-block">
+                </div>
+                <div class="site-img">
+                    <img src="~/Images/siteimg1.jpeg" alt="pic 1" width="280" height="260" style="display: inline-block">
+                </div>
+                <div class="site-img">
+                    <img src="~/Images/siteimg1.jpeg" alt="pic 1" width="280" height="260" style="display: inline-block">
+                </div>
+                <div class="site-img">
+                    <img src="~/Images/siteimg1.jpeg" alt="pic 1" width="280" height="260" style="display: inline-block">
+                </div>
+        </div>
+    </div> *@
+
+<footer class="page-footer font-small pt-4 border-top bg-white">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+                <!-- Content -->
+                <h5 class="text-uppercase">Future Subscribe Form</h5>
+                <p>Here you can use rows and columns to organize your footer content.</p>
+            </div>
+            <!-- Grid column -->
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+                <!-- Links -->
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="p-2 text-muted" href="/">HOME</a>
+                    </li>
+                    <li>
+                        <a class="p-2 text-muted" href="/about-me">ABOUT</a>
+                    </li>
+                    <li>
+                        <a class="p-2 text-muted" href="/travel-blog">BLOG</a>
+                    </li>
+                    <li>
+                        <a class="p-2 text-muted" href="/contact">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-md-0 mb-3">
+                <!-- Links -->
+                @* <h5 class="text-uppercase">Links</h5> *@
+                <div class="footer-img">
+                    <img src="" alt="">
+                    <h5>all about travel</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="background-color: #c4b7a6;">© 2020 Copyright: Alayne
+    </div>
+</footer>
+
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
